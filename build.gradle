@@ -1,15 +1,25 @@
 plugins {
     id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.1'
 }
 
-group = 'org.samples.greeting'
-version = '0.1'
+group = 'org.yunir.greeting'
+version = '0.2'
+
+pluginBundle {
+    website = 'https://github.com/Yunir/greeting-plugin-example'
+    vcsUrl = 'https://github.com/Yunir/greeting-plugin-example.git'
+    tags = ['tags', 'for', 'your', 'plugins']
+}
 
 gradlePlugin {
     plugins {
         greetingsPlugin {
-            id = 'org.samples.greeting'
+            id = 'org.yunir.greeting'
+            displayName = 'My Greeting Plugin'
+            description = 'Practice to learn to publish plugins to oss'
             implementationClass = 'org.example.greeting.GreetingPlugin'
+
         }
     }
 }
